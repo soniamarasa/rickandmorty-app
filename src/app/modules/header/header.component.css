@@ -1,0 +1,28 @@
+.banner {
+  background-image: url("../../../assets/rick-and-morty-banner.png");
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-size: cover;
+}
+
+
+.btns-chart {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-filter{
+    display: flex;
+    justify-content: flex-end;
+}
+
+header {
+    background-color: #752445;
+}
+
+.btns-row {
+    padding: 0.5em 0;
+  
+}

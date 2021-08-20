@@ -3,11 +3,17 @@
         <h4> Loading...</h4>
     </div>
     <ng-container *ngIf="currentCharacterList">
-        <div *ngFor="let character of currentCharacterList.results">
-            <app-character [character]="character"></app-character>
+        <div class="row">
+            <div class="col-12 col-sm-12  col-md-12 col-lg-6 principal " *ngFor="let character of currentCharacterList.results">
+                <app-character [character]="character"></app-character>
+            </div>
         </div>
-        <pagination [totalItems]="currentCharacterList.info.count" [itemsPerPage]=20 [maxSize]=5>
+        <div id="pagination">
+
+            <pagination [totalItems]="currentCharacterList.info.count" [itemsPerPage]=20 [maxSize]=5>
         </pagination>
+        </div>
+        
     </ng-container>
 
 </div>

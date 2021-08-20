@@ -1,9 +1,35 @@
 .image {
-    border-radius: 50%;
-    width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image img {
+  border-radius: 50%;
+  width: 100%;
+  border: 2px solid #91B0C1;
 }
 
 span {
-    font-weight: bold;
-    color: #302863;
+  font-weight: bold;
+  color: #302863;
+}
+
+h5 {
+  color: #a53d72;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  margin: 0.3em;
+}
+
+.col1,
+.col2 {
+  padding: 0;
+}
+
+.cardchar {
+  padding: 1em;
 }

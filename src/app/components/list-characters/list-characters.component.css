@@ -1,0 +1,16 @@
+.principal {
+  background-color: #D6E1E9;
+  border-radius: 1em;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 0.3em;
+  background-clip: content-box;
+  margin-bottom: 0.2rem;
+}
+
+#pagination {
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: center;
+}

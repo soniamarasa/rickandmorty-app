@@ -15,7 +15,10 @@ import { CharacterComponent } from './components/character/character.component';
 import { ListCharactersComponent } from './components/list-characters/list-characters.component';
 import { FilterButtonComponent } from './components/filter-button/filter-button.component';
 import { ApiService } from './services/api.service';
-
+import { EpsChartComponent } from './components/eps-chart/eps-chart.component';
+import { CharactersByPlanetChartComponent } from './components/characters-by-planet-chart/characters-by-planet-chart.component';
+import { CharactersChartComponent } from './components/characters-chart/characters-chart.component';
+import { ChartButtonComponent } from './components/chart-button/chart-button.component';
 
 
 @NgModule({
@@ -28,7 +31,11 @@ import { ApiService } from './services/api.service';
     FormComponent,
     CharacterComponent,
     ListCharactersComponent,
-    FilterButtonComponent
+    FilterButtonComponent,
+    EpsChartComponent,
+    CharactersByPlanetChartComponent,
+    CharactersChartComponent,
+    ChartButtonComponent
   ],
   imports: [
     BrowserModule,

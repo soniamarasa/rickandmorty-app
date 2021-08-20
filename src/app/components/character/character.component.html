@@ -1,18 +1,20 @@
-<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+<div class="cardchar">
     <div class="row">
-        <div class="col-4">
-            <img class="image" :src="{{character.image}}" alt="">
+        <h5 class="col-12">{{character.name}}</h5>
+    </div>
+    <div class="row">
+        <div class="col-3 image">
+            <img :src="{{character.image}}" alt="">
         </div>
-        <div class="col-8">
-            <h3>{{character.name}}</h3>
+        <div class="col-9">
+
             <div class="row">
-                <div class="col-5">
+                <div class="col-5 col1">
                     <p><span>Gênero:</span> {{character.gender}}</p>
                     <p><span>Status:</span> {{character.status}}</p>
-                  
                     <p><span>Espécie:</span> {{character.species}}</p>
                 </div>
-                <div class="col-7">
+                <div class="col col2">
                     <p><span>Origem:</span> {{character.origin.name}}</p>
                     <p><span>Última localização:</span> {{character.location.name}}</p>
                     <p><span>Total de aparições:</span> {{character.episode.length}}</p>
@@ -20,5 +22,4 @@
             </div>
         </div>
     </div>
-
 </div>
