@@ -19,6 +19,7 @@ import { EpsChartComponent } from './components/eps-chart/eps-chart.component';
 import { CharactersByPlanetChartComponent } from './components/characters-by-planet-chart/characters-by-planet-chart.component';
 import { CharactersChartComponent } from './components/characters-chart/characters-chart.component';
 import { ChartButtonComponent } from './components/chart-button/chart-button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ChartButtonComponent } from './components/chart-button/chart-button.com
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [ ApiService ],
   bootstrap: [AppComponent]

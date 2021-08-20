@@ -7,18 +7,21 @@
   border-radius: 50%;
   width: 100%;
   border: 2px solid #91B0C1;
+  /* border: 2px solid  #03C810; */
 }
 
 span {
   font-weight: bold;
-  color: #302863;
+  color: #2C6B68;
 }
 
 h5 {
-  color: #a53d72;
+  color: #D3435E;;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
+   font-family: "Quicksand", sans-serif; 
+   font-weight: bold;
 }
 
 p {

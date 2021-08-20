@@ -1,4 +1,9 @@
+html {
+  overflow-x: hidden;
+}
 body {
-    background-color:#BCCFDA;
-    ;
+  background-color: #bccfda;
+  font-family: "Dosis", sans-serif;
+  overflow-x: hidden;
+  
 }

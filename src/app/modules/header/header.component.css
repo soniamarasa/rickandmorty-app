@@ -3,26 +3,56 @@
   height: 400px;
   background-repeat: no-repeat;
   background-position: center;
-
   background-size: cover;
+  overflow-x: hidden;
+  background-clip: content-box;
+
 }
 
+.banner img {
+  image-orientation: flip;
+}
 
 .btns-chart {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.btn-filter{
-    display: flex;
-    justify-content: flex-end;
+.btn-filter {
+  display: flex;
+  justify-content: flex-end;
 }
 
 header {
-    background-color: #752445;
+  /* background-color: #A8C0CE;  */
+  background-color: #772047;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
 .btns-row {
-    padding: 0.5em 0;
-  
+  padding: 0.5em 0;
+  display: flex;
+  align-items: center;
 }
+
+@media (max-width: 767px) {
+  .banner {
+    height: 130px;
+  }
+  .btn-filter {
+    margin-top: 0.5em;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px)  and (max-width: 1199px) {
+    .banner {
+      height: 230px;
+    }
+    .btn-filter {
+      margin-top: 0.5em;
+      justify-content: center;
+    }
+  }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-chart-button',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chart-button.component.css']
 })
 export class ChartButtonComponent implements OnInit {
+
+  @Input() chart: string | undefined;
 
   constructor() { }
 
