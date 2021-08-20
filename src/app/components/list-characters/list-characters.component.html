@@ -1,0 +1,13 @@
+<div>
+    <div *ngIf="!currentCharacterList">
+        <h4> Loading...</h4>
+    </div>
+    <ng-container *ngIf="currentCharacterList">
+        <div *ngFor="let character of currentCharacterList.results">
+            <app-character [character]="character"></app-character>
+        </div>
+        <pagination [totalItems]="currentCharacterList.info.count" [itemsPerPage]=20 [maxSize]=5>
+        </pagination>
+    </ng-container>
+
+</div>
