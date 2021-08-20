@@ -1,19 +1,29 @@
 <div>
-    <div *ngIf="!currentCharacterList">
-        <h4> Loading...</h4>
+  <div *ngIf="!apiService.currentCharacterList">
+    <h4>Loading...</h4>
+  </div>
+  <ng-container *ngIf="apiService.currentCharacterList">
+    <div class="row">
+      <div
+        class="col-12 col-sm-12 col-md-12 col-lg-6 principal"
+        *ngFor="let character of apiService.currentCharacterList.results"
+      >
+        <app-character [character]="character"></app-character>
+      </div>
     </div>
-    <ng-container *ngIf="currentCharacterList">
-        <div class="row">
-            <div class="col-12 col-sm-12  col-md-12 col-lg-6 principal " *ngFor="let character of currentCharacterList.results">
-                <app-character [character]="character"></app-character>
-            </div>
-        </div>
-        <div id="pagination">
-
-            <pagination [totalItems]="currentCharacterList.info.count"  previousText="&lsaquo;" nextText="&rsaquo;" [itemsPerPage]=20 [maxSize]=5>
-        </pagination>
-        </div>
-        
-    </ng-container>
-
+    <div id="pagination">
+      <pagination
+        [totalItems]="apiService.currentCharacterList.info.count"
+        [boundaryLinks]="true"
+        previousText="&lsaquo;"
+        nextText="&rsaquo;"
+        firstText="&laquo;"
+        lastText="&raquo;"
+        [itemsPerPage]="20"
+        [maxSize]="5"
+        (pageChanged)="pageChanged($event)"
+      >
+      </pagination>
+    </div>
+  </ng-container>
 </div>

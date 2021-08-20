@@ -20,6 +20,8 @@ import { CharactersByPlanetChartComponent } from './components/characters-by-pla
 import { CharactersChartComponent } from './components/characters-chart/characters-chart.component';
 import { ChartButtonComponent } from './components/chart-button/chart-button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ChartComponent } from './chart/chart.component';
+import { ModalChartComponent } from './modal-chart/modal-chart.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     EpsChartComponent,
     CharactersByPlanetChartComponent,
     CharactersChartComponent,
-    ChartButtonComponent
+    ChartButtonComponent,
+    ChartComponent,
+    ModalChartComponent
   ],
   imports: [
     BrowserModule,

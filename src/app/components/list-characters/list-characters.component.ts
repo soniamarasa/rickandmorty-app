@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 import { ApiService } from 'src/app/services/api.service';
+
 
 @Component({
   selector: 'app-list-characters',
@@ -7,12 +9,18 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./list-characters.component.css'],
 })
 export class ListCharactersComponent implements OnInit {
-  currentCharacterList!:any
 
-  constructor(private apiService: ApiService) {}
+  constructor(public apiService: ApiService) {}
 
   async ngOnInit(): Promise<void> {
-    this.currentCharacterList = await this.apiService.getCharacter();
-    console.log(this.currentCharacterList);
+    await this.listCharacter()
   }
+
+  async pageChanged(event: PageChangedEvent): Promise<void> {
+    await this.listCharacter(event.page);
+  }
+
+  async listCharacter(page=1): Promise<void> {
+    this.apiService.currentCharacterList = await this.apiService.getCharacter(page);
+  } 
 }

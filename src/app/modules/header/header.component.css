@@ -24,11 +24,11 @@
 }
 
 header {
-  /* background-color: #A8C0CE;  */
-  background-color: #772047;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+  background-color: #A8C0CE; 
+  /* background-color: #772047; */
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 .btns-row {
@@ -43,6 +43,9 @@ header {
   }
   .btn-filter {
     margin-top: 0.5em;
+    justify-content: center;
+  }
+  .btns-chart {
     justify-content: center;
   }
 }
