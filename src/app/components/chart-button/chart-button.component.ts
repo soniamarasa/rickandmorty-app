@@ -12,6 +12,7 @@ import { ModalChartComponent } from '../modal-chart/modal-chart.component';
 })
 export class ChartButtonComponent implements OnInit {
   @Input() chart: string | undefined;
+  @Input() key: string | undefined;
   hasNextPage: boolean = true;
   currentPage: number = 1;
   epResponse: any = undefined;
@@ -37,7 +38,6 @@ export class ChartButtonComponent implements OnInit {
         );
         this.epResponse.info.next ? this.currentPage++ : this.stopRequesting();
       }
-      console.log(this.apiService.epList);
     }
 
     let seasonCount: any = {};
@@ -45,10 +45,21 @@ export class ChartButtonComponent implements OnInit {
       const season = ep.episode.substring(0, 3);
       seasonCount[season] ? seasonCount[season]++ : (seasonCount[season] = 1);
     });
-    console.log(seasonCount);
 
     const initialState = {
       seasonCount,
+
+      title:
+        this.key === 'eps'
+          ? 'Total de Episódios por Temporada'
+          : 'Total de Personagens por Planeta',
+
+      chartLab:
+      this.key === 'eps'
+      ? 'Quantidade de Episódios'
+      : 'Quantidade de Personagens',
+
+
     };
 
     this.modalRef = this.modalService.show(ModalChartComponent, {

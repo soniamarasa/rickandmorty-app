@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BarChartComponent implements OnInit {
   @Input() seasonCount: any;
+  @Input() chartLab: any | undefined;
   keys: any = undefined;
   values: any = undefined;
 
@@ -27,7 +28,7 @@ export class BarChartComponent implements OnInit {
   public barChartType = 'bar';
   public barChartLegend = true;
 
-  public barData = [{ data: [], label: 'Quantidade de Episódios' }];
+  public barData = [{ data: [], label: '' }];
 
   constructor() {}
 
@@ -35,5 +36,6 @@ export class BarChartComponent implements OnInit {
     this.keys = Object.keys(this.seasonCount);
     this.values = Object.values(this.seasonCount);
     this.barData[0].data = this.values;
+    this.barData[0].label = this.chartLab;
   }
 }

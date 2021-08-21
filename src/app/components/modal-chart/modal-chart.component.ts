@@ -8,6 +8,8 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./modal-chart.component.css'],
 })
 export class ModalChartComponent implements OnInit, OnDestroy {
+  chartLab: string | undefined;
+  title:string | undefined ;
   seasonCount: any;
 
   constructor(public bsModalRef: BsModalRef, private apiService: ApiService) {}

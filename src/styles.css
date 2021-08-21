@@ -6,3 +6,25 @@ body {
   font-family: "Dosis", sans-serif;
   overflow-x: hidden;
 }
+
+i {
+  margin-right: 0.3em;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #91b0c1;
+  background-color: #cc405e;
+  border-color: #cc405e;
+}
+.page-link {
+  color: #cc405e;
+  background-color: #91b0c1;
+  border: 1px solid #81a5b9;
+}
+
+.pagination-last.page-item.disabled {
+  color: #cc405e;
+  background-color: #91b0c1;
+  border: 1px solid #81a5b9;
+}
