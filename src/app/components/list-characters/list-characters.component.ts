@@ -24,9 +24,17 @@ export class ListCharactersComponent implements OnInit {
   }
 
   async listCharacter(page = 1): Promise<void> {
-    this.apiService.currentCharacterList = await this.apiService.getEndpoints(
-      'character',
-      page
-    );
+    if (!this.apiService.isFiltering) {
+      this.apiService.currentList = await this.apiService.getEndpoints(
+        'character',
+        page
+      );
+    } else {
+      this.apiService.currentList =
+        await this.apiService.paginationFilterEndpoint(
+          this.apiService.filEndpoint,
+          this.apiService.filParams, page
+        );
+    }
   }
 }

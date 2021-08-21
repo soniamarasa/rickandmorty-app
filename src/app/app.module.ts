@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -24,6 +25,8 @@ import { ModalChartComponent } from './components/modal-chart/modal-chart.compon
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 
 import { ApiService } from './services/api.service';
+import { EpisodeComponent } from './components/episode/episode.component';
+import { LocationComponent } from './components/location/location.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,8 @@ import { ApiService } from './services/api.service';
     ChartButtonComponent,
     ModalChartComponent,
     BarChartComponent,
+    EpisodeComponent,
+    LocationComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,9 @@ import { ApiService } from './services/api.service';
     PaginationModule.forRoot(),
     ModalModule.forRoot(),
     FontAwesomeModule,
-    ChartsModule
+    ChartsModule, 
+    FormsModule, 
+    ReactiveFormsModule 
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ApiService } from 'src/app/services/api.service';
+
 
 @Component({
   selector: 'app-filter-modal',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(public bsModalRef: BsModalRef, private apiService: ApiService) {}
 
   ngOnInit(): void {
   }

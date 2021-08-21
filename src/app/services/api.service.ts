@@ -6,11 +6,14 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ApiService {
-  currentCharacterList!: any;
+  currentList!: any;
+  isFiltering = false;
+
+  filEndpoint = ''
+  filParams: any
   
   epList: Array<any> = [];
   charList: Array<any> = [];
-
 
   constructor(private http: HttpClient) {}
 
@@ -20,11 +23,11 @@ export class ApiService {
       .toPromise();
   }
 
-  // public async getLocation(page: number) {
-  //   return await this.http.get(`${environment.api_url}location?page=${page}`).toPromise();
-  // }
+  public async filterEndpoint(endpoint: string, params: any) {
+    return await this.http.get(`${environment.api_url}${endpoint}/?${params}`).toPromise();
+  }
 
-  // public async getEpisode(page: number) {
-  //   return await this.http.get(`${environment.api_url}episode?page=${page}`).toPromise();
-  // }
+  public async paginationFilterEndpoint(endpoint: string, params: any, page: any) {
+    return await this.http.get(`${environment.api_url}${endpoint}/?page=${page}&${params}`).toPromise();
+  }
 }

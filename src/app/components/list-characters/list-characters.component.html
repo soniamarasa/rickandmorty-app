@@ -1,19 +1,18 @@
 <div>
-  <div *ngIf="!apiService.currentCharacterList">
+  <div *ngIf="!apiService.currentList">
     <h4>Loading...</h4>
   </div>
-  <ng-container *ngIf="apiService.currentCharacterList">
+  <ng-container *ngIf="apiService.currentList">
     <div class="row">
-      <div
-        class="col-12 col-sm-12 col-md-12 col-lg-6 principal"
-        *ngFor="let character of apiService.currentCharacterList.results"
-      >
-        <app-character [character]="character"></app-character>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 principal" *ngFor="let item of apiService.currentList.results" >
+        <app-character [character]="item"  *ngIf = "!apiService.isFiltering || apiService.filEndpoint === 'character'"></app-character>
+        <app-location [location]="item"  *ngIf = "apiService.isFiltering && apiService.filEndpoint === 'location'"></app-location>
+        <app-episode [episode]="item" *ngIf = "apiService.isFiltering && apiService.filEndpoint === 'episode'"></app-episode>
       </div>
     </div>
     <div id="pagination">
       <pagination
-        [totalItems]="apiService.currentCharacterList.info.count"
+        [totalItems]="apiService.currentList.info.count"
         [boundaryLinks]="true"
         previousText="&lsaquo;"
         nextText="&rsaquo;"
