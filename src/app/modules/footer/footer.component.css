@@ -1,10 +1,11 @@
 footer {
-    background-color: #A8C0CE;
+    /* background-color: #A8C0CE; */
     height: 3rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10fr;
 }
 
 a {

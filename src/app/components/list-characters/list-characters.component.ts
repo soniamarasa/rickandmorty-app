@@ -15,7 +15,7 @@ export class ListCharactersComponent implements OnInit {
   }
 
   scrollTop() {
-    window.scrollTo(0, 130);
+    window.scrollTo(0,100);
   }
 
   async pageChanged(event: PageChangedEvent): Promise<void> {
@@ -33,8 +33,10 @@ export class ListCharactersComponent implements OnInit {
       this.apiService.currentList =
         await this.apiService.paginationFilterEndpoint(
           this.apiService.filEndpoint,
-          this.apiService.filParams, page
+          this.apiService.filParams,
+          page
         );
     }
+    this.scrollTop();
   }
 }

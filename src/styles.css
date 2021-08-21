@@ -1,5 +1,6 @@
 html {
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
@@ -8,10 +9,6 @@ body {
   overflow-x: hidden;
 }
 
-html,
-body {
-  height: 100% !important;
-}
 
 i {
   margin-right: 0.3em;

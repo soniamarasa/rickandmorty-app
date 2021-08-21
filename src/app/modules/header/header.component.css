@@ -22,13 +22,12 @@
   justify-content: flex-end;
 }
 
-#btn-filter button {
- margin-left: 1em;
+.clean {
+  margin-left: 1em;
 }
 
 header {
   background-color: #a8c0ce;
-  /* background-color: #772047; */
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
@@ -59,7 +58,6 @@ header {
     height: 230px;
   }
   .btn-filter {
-    margin-top: 0.5em;
     justify-content: flex-end;
   }
 }
