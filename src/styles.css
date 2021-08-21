@@ -1,7 +1,5 @@
 @import '~ngx-toastr/toastr';
 
-
-
 html {
   overflow-x: hidden;
   height: 100%;
@@ -18,11 +16,8 @@ i {
   margin-right: 0.3em;
 }
 
-.page-item.active .page-link {
-  z-index: 3;
-  background-color: #cc405e;
-  border-color: #cc405e;
-}
-.page-link {
-  color: #cc405e;
+
+.current {
+  background-color: #cc405e !important;
+  border-color: #cc405e !important;
 }

@@ -9,6 +9,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ChartsModule } from 'ng2-charts';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
+import {NgxPaginationModule} from 'ngx-pagination'; 
 import 'chartjs-plugin-zoom'
 
 import { AppComponent } from './app.component';
@@ -55,6 +56,7 @@ import { LocationComponent } from './components/location/location.component';
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
     FontAwesomeModule,
+    NgxPaginationModule,
     ChartsModule, 
     FormsModule, 
     ReactiveFormsModule 

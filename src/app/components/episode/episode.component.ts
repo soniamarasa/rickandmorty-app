@@ -9,6 +9,7 @@ export class EpisodeComponent implements OnInit {
 
   @Input() episode: any;
 
+
   constructor() { }
 
   ngOnInit(): void {

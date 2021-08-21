@@ -7,7 +7,7 @@
     <div class="form-row" *ngIf="filterSelected === 'Personagem'">
         <div class=" form-group col-12 col-sm-12 col-md-6">
             <input type="text" placeholder="Nome do Personagem" formControlName="name" class="form-control">
-            <select name="category" id="inputType" class="form-control" formControlName="status">
+            <select name="category" class="form-control" formControlName="status">
                 <option value="" disabled selected>Selecione o Status</option>
                 <option *ngFor="let st of status" value="{{st}}">{{st}}</option>
             </select>
@@ -15,7 +15,7 @@
         </div>
         <div class=" form-group  col-12 col-sm-12 col-md-6">
             <input type="text" placeholder="Tipo" formControlName="type" class="form-control">
-            <select name="category" id="inputType" class="form-control" formControlName="gender">
+            <select name="category" class="form-control" formControlName="gender">
                 <option value="" disabled selected>Selecione o Gênero</option>
                 <option *ngFor="let gd of genders" value="{{gd}}">{{gd}}</option>
             </select>

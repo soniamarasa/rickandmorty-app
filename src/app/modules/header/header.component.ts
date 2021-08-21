@@ -14,9 +14,10 @@ export class HeaderComponent implements OnInit {
   }
 
   async cleanFilter() {
+    this.apiService.config.currentPage = 1
     this.apiService.currentList = await this.apiService.getEndpoints('character', 1)
-    this.apiService.isFiltering = false;
-    this.apiService.currentPage = 1
+    this.apiService.config.totalItems = this.apiService.currentList.info.count
+    this.apiService.isFiltering = false
   }
 
 }

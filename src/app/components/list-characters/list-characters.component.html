@@ -4,26 +4,20 @@
   </div>
   <ng-container *ngIf="apiService.currentList">
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 principal" *ngFor="let item of apiService.currentList.results" >
-        <app-character [character]="item"  *ngIf = "!apiService.isFiltering || apiService.filEndpoint === 'character'"></app-character>
-        <app-location [location]="item"  *ngIf = "apiService.isFiltering && apiService.filEndpoint === 'location'"></app-location>
-        <app-episode [episode]="item" *ngIf = "apiService.isFiltering && apiService.filEndpoint === 'episode'"></app-episode>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 principal"
+        *ngFor="let item of apiService.currentList.results | paginate: apiService.config">
+        <app-character [character]="item" *ngIf="!apiService.isFiltering || apiService.filEndpoint === 'character'">
+        </app-character>
+        <app-location [location]="item" *ngIf="apiService.isFiltering && apiService.filEndpoint === 'location'">
+        </app-location>
+        <app-episode [episode]="item" *ngIf="apiService.isFiltering && apiService.filEndpoint === 'episode'">
+        </app-episode>
       </div>
     </div>
     <div id="pagination">
-      <pagination
-        [totalItems]="apiService.currentList.info.count"
-        [boundaryLinks]="true"
-        previousText="&lsaquo;"
-        nextText="&rsaquo;"
-        firstText="&laquo;"
-        lastText="&raquo;"
-        [itemsPerPage]="20"
-        [maxSize]="5"
-        [(ngModel)]="apiService.currentPage"
-        (pageChanged)="pageChanged($event)"
-      >
-      </pagination>
+
+      <pagination-controls previousLabel="" nextLabel="" (pageChange)="pageChanged($event)"> </pagination-controls>
+
     </div>
   </ng-container>
 </div>

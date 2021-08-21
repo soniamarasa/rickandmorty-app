@@ -8,18 +8,23 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./list-characters.component.css'],
 })
 export class ListCharactersComponent implements OnInit {
+
+
   constructor(public apiService: ApiService) {}
 
   async ngOnInit(): Promise<void> {
+    // this.apiService.config.currentPage = 1;
     await this.listCharacter();
+    this.apiService.config.totalItems = this.apiService.currentList.info.count
   }
 
   scrollTop() {
     window.scrollTo(0, 100);
   }
 
-  async pageChanged(event: PageChangedEvent): Promise<void> {
-    await this.listCharacter(event.page);
+  async pageChanged(page:any): Promise<void> {
+    this.apiService.config.currentPage = page
+    await this.listCharacter(page);
     this.scrollTop();
   }
 

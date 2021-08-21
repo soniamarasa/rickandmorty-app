@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
   currentList!: any;
-  currentPage: number = 1
+  // currentPage: number = 1
   isFiltering = false;
+
+  config = {
+    itemsPerPage: 20,
+    currentPage: 1,
+    totalItems: 0
+  }
 
   filEndpoint = '';
   filParams: any;
@@ -17,7 +22,7 @@ export class ApiService {
   epList: Array<any> = [];
   charList: Array<any> = [];
 
-  constructor(private toastr: ToastrService, private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   public async getEndpoints(endpoint: string, page: number) {
     return await this.http

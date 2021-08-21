@@ -80,6 +80,8 @@ export class FormComponent implements OnInit {
         this.apiService.filParams
       );
       this.apiService.currentList = response;
+      this.apiService.config.currentPage = 1;
+      this.apiService.config.totalItems = this.apiService.currentList.info.count;
       this.apiService.isFiltering = true;
       this.closeModal.emit();
     } catch (e) {

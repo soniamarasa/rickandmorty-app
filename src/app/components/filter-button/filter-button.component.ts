@@ -19,6 +19,13 @@ export class FilterButtonComponent implements OnInit {
   ngOnInit(): void {}
 
   async openFilterModal(): Promise<void> {
+    this.apiService.config.currentPage = 1;
+    this.apiService.currentList = await this.apiService.getEndpoints(
+      'character',
+      1
+    );
+    this.apiService.config.totalItems = this.apiService.currentList.info.count;
+    this.apiService.isFiltering = false;
     this.modalRef = this.modalService.show(FilterModalComponent, {
       class: 'modal-dialog-top modal-lg',
     });
