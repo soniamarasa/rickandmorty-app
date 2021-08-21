@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public apiService: ApiService) { }
 
   ngOnInit(): void {
+  }
+
+  async cleanFilter() {
+    this.apiService.currentList = await this.apiService.getEndpoints('character', 1)
+    this.apiService.isFiltering = false;
   }
 
 }

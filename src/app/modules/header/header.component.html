@@ -1,25 +1,31 @@
 <header>
-    <div>
-        <div class="row">
-            <div class="col-12 banner">
+  <div>
+    <div class="row">
+      <div class="col-12 banner">
 
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="container">
-        <div class="row btns-row">
-            <div class="col-12 col-sm-8 col-md-8 col-lg-8 btns-chart">
-                <app-chart-button key="eps" chart="Episódios Por Temporada"></app-chart-button>
-                <app-chart-button key="character" chart="Personagens Por Planeta"></app-chart-button>
-                <!-- <app-chart-button chart="Episódios Por Personagens"></app-chart-button> -->
-            </div>
+  <div class="container">
+    <div class="row btns-row">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 btns-chart">
+        <app-chart-button key="eps" chart="Episódios Por Temporada"></app-chart-button>
+        <app-chart-button key="character" chart="Personagens Por Planeta"></app-chart-button>
+        <!-- <app-chart-button chart="Episódios Por Personagens"></app-chart-button> -->
+      </div>
 
-            <div class="col-12 col-sm-4 col-md-4 col-lg-4 btn-filter">
-                <app-filter-button>
-                </app-filter-button>
-            </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 btn-filter">
+        <div id="btn-filter">
+          <app-filter-button>
+          </app-filter-button>
+          <button class="btn btn-success btn-sm " (click)="cleanFilter()" *ngIf="apiService.isFiltering">Limpar
+            Filtro</button>
 
         </div>
+
+      </div>
+
     </div>
+  </div>
 </header>

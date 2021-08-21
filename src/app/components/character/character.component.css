@@ -2,12 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0.5em;
+
 }
 
 .image img {
   border-radius: 50%;
   border: 2px solid #91b0c1;
-  width: 100%;
+  width: 70%;
   background-color: #91b0c1;
 }
 
@@ -16,22 +18,18 @@ span {
   color: #2c6b68;
 }
 
+
 h5 {
   color: #d3435e;
   text-transform: uppercase;
-  display: flex;
-  justify-content: center;
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
+  margin-bottom: 0.5em;
+  text-align: center;
 }
 
 p {
   margin: 0.3em;
-}
-
-.col1,
-.col2 {
-  padding: 0;
 }
 
 .cardchar {

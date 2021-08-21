@@ -22,6 +22,10 @@
   justify-content: flex-end;
 }
 
+#btn-filter button {
+ margin-left: 1em;
+}
+
 header {
   background-color: #a8c0ce;
   /* background-color: #772047; */

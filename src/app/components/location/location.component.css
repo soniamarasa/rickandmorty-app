@@ -1,26 +1,21 @@
 span {
-    font-weight: bold;
-    color: #2c6b68;
-  }
-  
-  h5 {
-    color: #d3435e;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    font-family: "Quicksand", sans-serif;
-    font-weight: bold;
-  }
-  
-  p {
-    margin: 0.3em;
-  }
-  
-  .col1,
-  .col2 {
-    padding: 0;
-  }
-  
-  .cardloc {
-    padding: 1em;
-  }
+  font-weight: bold;
+  color: #2c6b68;
+}
+
+h5 {
+  color: #46bb00;
+  text-transform: uppercase;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.cardloc {
+  padding: 1em;
+}
+
+p {
+  margin: 0.3em;
+}

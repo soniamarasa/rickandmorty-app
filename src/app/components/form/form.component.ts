@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -8,6 +9,9 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
+
+  @Output() closeModal = new EventEmitter()
+
   filterOptions = ['Personagem', 'Localização', 'Episódios'];
   filterSelected = '';
   filterSelectedObj: any;
@@ -65,7 +69,9 @@ export class FormComponent implements OnInit {
     this.apiService.filParams = this.apiService.filParams.substring(0, this.apiService.filParams.length - 1)
     const response = await this.apiService.filterEndpoint(this.filterSelectedObj[0].key, this.apiService.filParams)
     this.apiService.currentList = response
+ 
     this.apiService.isFiltering = true
+    this.closeModal.emit()
   }
 
 }
