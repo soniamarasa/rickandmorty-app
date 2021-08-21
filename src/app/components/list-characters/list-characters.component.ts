@@ -15,7 +15,7 @@ export class ListCharactersComponent implements OnInit {
   }
 
   scrollTop() {
-    window.scrollTo(0,100);
+    window.scrollTo(0, 100);
   }
 
   async pageChanged(event: PageChangedEvent): Promise<void> {

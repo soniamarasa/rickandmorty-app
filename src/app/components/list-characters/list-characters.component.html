@@ -20,6 +20,7 @@
         lastText="&raquo;"
         [itemsPerPage]="20"
         [maxSize]="5"
+        [(ngModel)]="apiService.currentPage"
         (pageChanged)="pageChanged($event)"
       >
       </pagination>
