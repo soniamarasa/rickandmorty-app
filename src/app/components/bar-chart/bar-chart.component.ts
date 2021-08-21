@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./bar-chart.component.css'],
 })
 export class BarChartComponent implements OnInit {
-  @Input() seasonCount: any;
+  @Input() obj: any;
   @Input() chartLab: any | undefined;
   keys: any = undefined;
   values: any = undefined;
@@ -23,6 +23,18 @@ export class BarChartComponent implements OnInit {
         },
       ],
     },
+    plugins: {
+      zoom: {
+        pan: {
+          enabled: true,
+          mode: 'x',
+        },
+        zoom: {
+          enabled: true,
+          mode: 'x',
+        },
+      },
+    },
   };
 
   public barChartType = 'bar';
@@ -33,8 +45,8 @@ export class BarChartComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.keys = Object.keys(this.seasonCount);
-    this.values = Object.values(this.seasonCount);
+    this.keys = Object.keys(this.obj);
+    this.values = Object.values(this.obj);
     this.barData[0].data = this.values;
     this.barData[0].label = this.chartLab;
   }

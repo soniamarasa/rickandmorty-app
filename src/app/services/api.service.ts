@@ -7,7 +7,10 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiService {
   currentCharacterList!: any;
+  
   epList: Array<any> = [];
+  charList: Array<any> = [];
+
 
   constructor(private http: HttpClient) {}
 

@@ -9,8 +9,8 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class ModalChartComponent implements OnInit, OnDestroy {
   chartLab: string | undefined;
-  title:string | undefined ;
-  seasonCount: any;
+  title: string | undefined;
+  obj: any;
 
   constructor(public bsModalRef: BsModalRef, private apiService: ApiService) {}
 

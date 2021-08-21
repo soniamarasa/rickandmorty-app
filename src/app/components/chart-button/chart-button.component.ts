@@ -15,7 +15,7 @@ export class ChartButtonComponent implements OnInit {
   @Input() key: string | undefined;
   hasNextPage: boolean = true;
   currentPage: number = 1;
-  epResponse: any = undefined;
+  apiResponse: any = undefined;
   modalRef: BsModalRef | undefined;
 
   constructor(
@@ -27,27 +27,35 @@ export class ChartButtonComponent implements OnInit {
 
   async openChartModal(): Promise<void> {
     this.hasNextPage = true;
+    const endpoint = this.key === 'eps' ? 'episode' : 'location';
+    const apiList = this.key === 'eps' ? 'epList' : 'charList';
     while (this.hasNextPage) {
-      this.epResponse = await this.apiService.getEndpoints(
-        'episode',
+      this.apiResponse = await this.apiService.getEndpoints(
+        endpoint,
         this.currentPage
       );
-      if (this.epResponse) {
-        this.epResponse.results.forEach((ep: any) =>
-          this.apiService.epList.push(ep)
+      if (this.apiResponse) {
+        this.apiResponse.results.forEach((item: any) =>
+          this.apiService[apiList].push(item)
         );
-        this.epResponse.info.next ? this.currentPage++ : this.stopRequesting();
+        this.apiResponse.info.next ? this.currentPage++ : this.stopRequesting();
       }
     }
 
-    let seasonCount: any = {};
-    this.apiService.epList.forEach((ep) => {
-      const season = ep.episode.substring(0, 3);
-      seasonCount[season] ? seasonCount[season]++ : (seasonCount[season] = 1);
-    });
+    let obj: any = {};
+    if (this.key === 'eps') {
+      this.apiService.epList.forEach((ep) => {
+        const season = ep.episode.substring(0, 3);
+        obj[season] ? obj[season]++ : (obj[season] = 1);
+      });
+    } else {
+      this.apiService.charList.forEach((local) => {
+        obj[local.name] = local.residents.length;
+      });
+    }
 
     const initialState = {
-      seasonCount,
+      obj,
 
       title:
         this.key === 'eps'
@@ -55,11 +63,9 @@ export class ChartButtonComponent implements OnInit {
           : 'Total de Personagens por Planeta',
 
       chartLab:
-      this.key === 'eps'
-      ? 'Quantidade de Episódios'
-      : 'Quantidade de Personagens',
-
-
+        this.key === 'eps'
+          ? 'Quantidade de Episódios'
+          : 'Quantidade de Personagens',
     };
 
     this.modalRef = this.modalService.show(ModalChartComponent, {

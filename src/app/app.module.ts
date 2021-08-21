@@ -7,6 +7,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ChartsModule } from 'ng2-charts';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import 'chartjs-plugin-zoom'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from '../app/modules/header/header.component';
