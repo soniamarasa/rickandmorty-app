@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 
-import {  PaginationModule } from 'ngx-bootstrap/pagination'
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,14 +17,11 @@ import { CharacterComponent } from './components/character/character.component';
 import { ListCharactersComponent } from './components/list-characters/list-characters.component';
 import { FilterButtonComponent } from './components/filter-button/filter-button.component';
 import { ApiService } from './services/api.service';
-import { EpsChartComponent } from './components/eps-chart/eps-chart.component';
 import { CharactersByPlanetChartComponent } from './components/characters-by-planet-chart/characters-by-planet-chart.component';
-import { CharactersChartComponent } from './components/characters-chart/characters-chart.component';
 import { ChartButtonComponent } from './components/chart-button/chart-button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ChartComponent } from './chart/chart.component';
-import { ModalChartComponent } from './modal-chart/modal-chart.component';
-
+import { ModalChartComponent } from './components/modal-chart/modal-chart.component';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -35,21 +34,21 @@ import { ModalChartComponent } from './modal-chart/modal-chart.component';
     CharacterComponent,
     ListCharactersComponent,
     FilterButtonComponent,
-    EpsChartComponent,
     CharactersByPlanetChartComponent,
-    CharactersChartComponent,
     ChartButtonComponent,
-    ChartComponent,
-    ModalChartComponent
+    ModalChartComponent,
+    BarChartComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     PaginationModule.forRoot(),
-    FontAwesomeModule
+    ModalModule.forRoot(),
+    FontAwesomeModule,
+    ChartsModule
   ],
-  providers: [ ApiService ],
-  bootstrap: [AppComponent]
+  providers: [ApiService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
