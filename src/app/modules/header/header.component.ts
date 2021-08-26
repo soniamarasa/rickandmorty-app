@@ -12,12 +12,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
-  async cleanFilter() {
-    this.apiService.config.currentPage = 1
-    this.apiService.currentList = await this.apiService.getEndpoints('character', 1)
-    this.apiService.config.totalItems = this.apiService.currentList.info.count
-    this.apiService.isFiltering = false
-  }
 
 }

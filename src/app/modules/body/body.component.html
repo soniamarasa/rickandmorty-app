@@ -3,29 +3,45 @@
         <div class="col-12 p-0 ">
             <div class="title">
                 <h2 id="statistics">Total Episodes Per Season</h2>
-              </div>
-          <app-bar-chart *ngIf="renderGraphs" [obj]="currentEpObj" chartLab="Quantidade de Episódios"> </app-bar-chart>
+            </div>
+            <app-bar-chart *ngIf="renderGraphs" [obj]="currentEpObj" chartLab="Quantidade de Episódios">
+            </app-bar-chart>
         </div>
-      </div>
-</div>  
+    </div>
+</div>
 <div class="container-fluid planet-char">
     <div class="row">
         <div class="col-12 p-0  ">
             <div class="title">
-                <h2><a ></a>Total Characters Per Planet</h2>
-              </div>
-            <app-bar-chart *ngIf="renderGraphs" [obj]="currentLocalObj" chartLab="Quantidade de Personagens"> </app-bar-chart>
+                <h2><a></a>Total Characters Per Planet</h2>
+            </div>
+            <app-bar-chart *ngIf="renderGraphs" [obj]="currentLocalObj" chartLab="Quantidade de Personagens">
+            </app-bar-chart>
         </div>
     </div>
 </div>
+
 <div class="container-fluid container-list-all">
-    <div class="row ">
-        <div class="col-12" >
-            <div class="title">
+
+    <div class="row btns-row">
+        <div class="col-12  btn-filter">
+            <app-filter-button></app-filter-button>
+            <button class="btn btn-danger btn-sm clean" (click)="cleanFilter()" *ngIf="apiService.isFiltering">Limpar
+                Filtro</button>
+        </div>
+    </div>
+
+    <!-- <div class="container"> -->
+    <div #char class="row ">
+        <div class="col-12">
+            <div class="title" *ngIf="!apiService.isFiltering">
                 <h1 id="characters">CHARACTERS</h1>
                 <h3> SEE SOME CHARACTER TO SEE THE DETAILS!</h3>
-              </div>
+            </div>
             <app-list-characters> </app-list-characters>
         </div>
     </div>
+
+    <!-- </div> -->
+
 </div>

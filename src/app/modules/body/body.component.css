@@ -4,21 +4,20 @@
 }
 
 .container-list-all {
- 
   background-image: url("../../../assets/rickandmorty-pattern2.png");
 }
 
 .container-fluid {
-   padding: 1em 3em;
+  padding: 1em 3em;
 }
 
-.season-eps, .planet-char {
+.season-eps,
+.planet-char {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
   overflow-x: hidden;
-  
 }
 
 .season-eps {
@@ -32,21 +31,44 @@
 }
 
 .title {
-  
   text-align: center;
   margin-bottom: 1em;
 }
 
-h1,h2 {
-  font-family: 'Rampart One', cursive;
-   color: white;
+h1,
+h2 {
+  font-family: "Rampart One", cursive;
+  color: white;
 }
 
 h1 {
- 
   text-shadow: -2px -2px 6px rgb(5, 205, 255), 2px 2px 6px rgb(5, 205, 255);
 }
 
 h3 {
   color: white;
+}
+
+.btn-filter {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.3em;
+}
+
+.clean {
+  margin-left: 1em;
+}
+
+.btns-row {
+  display: flex;
+  align-items: center;
+}
+
+
+@media (max-width: 767px) {
+  .btn-filter {
+    margin-bottom: 1em;
+    justify-content: center;
+  }
+
 }

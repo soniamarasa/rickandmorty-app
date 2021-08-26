@@ -103,17 +103,16 @@ li {
 }
 
 .card-chart:hover .flip-card-back {
-  transition: all 0.9s ease;
+  transition: all 1s ease;
   display: inherit;
 }
 
 .flip-card-front,
 .flip-card-back {
   border-radius: 0.85em 0.85em 0 0;
-  position: absolute;
+  /* position: absolute;
   width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
+  height: 100%; */
 }
 
 .flip-card-front {
@@ -126,6 +125,7 @@ li {
   padding: 1em;
   background-color: rgb(68, 68, 68);
   color: white;
+
   height: 300px;
   box-shadow: inset 0 -50px 25px -25px rgb(3, 176, 189);
   -webkit-box-shadow:inset 0 -50px 25px -25px rgb(3, 176, 189) ;

@@ -16,12 +16,19 @@ export class BodyComponent implements OnInit {
 
   renderGraphs: boolean = false;
 
-  constructor(private apiService: ApiService) {}
+  constructor(public apiService: ApiService) {}
 
   async ngOnInit(): Promise<void> {
     await this.requestData('eps');
     await this.requestData('character');
     this.renderGraphs = true;
+  }
+
+  async cleanFilter() {
+    this.apiService.config.currentPage = 1
+    this.apiService.currentList = await this.apiService.getEndpoints('character', 1)
+    this.apiService.config.totalItems = this.apiService.currentList.info.count
+    this.apiService.isFiltering = false
   }
 
   stopRequesting() {
