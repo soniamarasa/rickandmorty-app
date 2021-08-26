@@ -3,7 +3,7 @@
     <h4>Loading...</h4>
   </div>
   <ng-container *ngIf="apiService.currentList">
-    <div class="row ">
+    <div #target class="row ">
      
           
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch "
@@ -23,7 +23,7 @@
     </div>
     <div id="pagination">
 
-      <pagination-controls previousLabel="" nextLabel="" (pageChange)="pageChanged($event)"> </pagination-controls>
+      <pagination-controls  previousLabel="" nextLabel="" (pageChange)="pageChanged($event)" (click)="scroll(target)"> </pagination-controls>
 
     </div>
   </ng-container>

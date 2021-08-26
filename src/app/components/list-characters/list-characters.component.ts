@@ -18,14 +18,14 @@ export class ListCharactersComponent implements OnInit {
     this.apiService.config.totalItems = this.apiService.currentList.info.count
   }
 
-  scrollTop() {
-    window.scrollTo(0, 100);
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
   }
 
   async pageChanged(page:any): Promise<void> {
     this.apiService.config.currentPage = page
     await this.listCharacter(page);
-    this.scrollTop();
+  
   }
 
   async listCharacter(page = 1): Promise<void> {
@@ -42,6 +42,6 @@ export class ListCharactersComponent implements OnInit {
           page
         );
     }
-    this.scrollTop();
+
   }
 }
