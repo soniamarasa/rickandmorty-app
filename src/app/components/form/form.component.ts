@@ -20,8 +20,6 @@ export class FormComponent implements OnInit {
   genders = ['Male', 'Female', 'Genderless', 'Unknown'];
 
   form!: FormGroup;
-  submitted = false;
-  formOk = false;
 
   filters = [
     {
@@ -56,7 +54,7 @@ export class FormComponent implements OnInit {
     );
     const filterOptionSelected = this.filterSelectedObj[0].formOptions;
     const formGroup = filterOptionSelected.reduce((acc: any, obj: any) => {
-      acc[obj] = ['', Validators.required];
+      acc[obj] = [''];
       return acc;
     }, {});
     this.apiService.filEndpoint = this.filterSelectedObj[0].key;

@@ -1,23 +1,45 @@
-<div class="cardchar">
-    <div class="row title">
-        <h5 class="col-12">{{character.name}}</h5>
+<div class="card-chart">
+  <div class="flip-card" [ngStyle]="{ 'background-image': ' url(' + character.image + ')' }">
+
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <!-- <img :src="{{character.image}}" alt=""> -->
+      </div>
+      <div class="flip-card-back">
+        <h4>Details</h4>
+        <hr />
+        <ul>
+          <li><span>Gender:</span> {{ character.gender }}</li>
+          <li><span>Origin:</span> {{ character.origin.name }}</li>
+          <li><span>Last Location:</span> {{ character.location.name }}</li>
+          <li>
+            <span>Total Apparitions:</span> {{ character.episode.length }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <h3 class="col-12">{{ character.name }}</h3>
+
+  <div class="row card2">
+    <div class="col-3 heart">
+      <img *ngIf="character.status === 'Alive'" src="../../../assets/alive.gif" alt="" />
+      <img *ngIf="character.status === 'Dead'" src="../../../assets/dead.gif" alt="" />
+      <img *ngIf="character.status === 'unknown'" src="../../../assets/UNKNOWN.png" alt="" />
     </div>
 
-    <div class="row" >
-        <div class="col-12 image">
-            <img :src="{{character.image}}" alt="">
-        </div>
+    <div class="col-9">
+      <h5>Status</h5>
+      <hr />
+      <p>
+        <span [ngClass]="{
+            alive: character.status === 'Alive',
+            dead: character.status === 'Dead'
+          }" class="status">{{ character.status }}</span> - {{ character.species }}
+      </p>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <p><span>Gênero:</span> {{character.gender}}</p>
-            <p><span>Status:</span> {{character.status}}</p>
-            <p><span>Espécie:</span> {{character.species}}</p>
-            <p><span>Origem:</span> {{character.origin.name}}</p>
-            <p><span>Última localização:</span> {{character.location.name}}</p>
-            <p><span>Total de aparições:</span> {{character.episode.length}}</p>
-        </div>
-    </div>
-
-
+  </div>
 </div>

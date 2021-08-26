@@ -1,19 +1,32 @@
 .principal {
-  background-color: #D6E1E9;
+  background-clip: border-box;
+  background-color: #deeeed;
+  border: 3px solid #667887 !important;
   border-radius: 1em;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  padding: 0.3em;
-  background-clip: content-box;
-  margin-bottom: 0.2rem;
+  margin-bottom: 2em;
+  width: inherit;
+}
+
+.principal:hover {
+  transition: all 0.5s ease;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.border:hover {
+  box-shadow: 0px 0px 1em rgb(3, 176, 189);
+  -webkit-box-shadow: 0px 0px 1em rgb(3, 176, 189);
+  -moz-box-shadow: 0px 0px 1em rgb(3, 176, 189);
 }
 
 #pagination {
-    margin-top: 0.5em;
-    display: flex;
-    justify-content: center;
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: center;
 }
+
 body {
   height: 100%;
 }

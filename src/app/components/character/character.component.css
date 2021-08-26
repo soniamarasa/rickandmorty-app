@@ -1,37 +1,135 @@
-.image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.5em;
-
+.heart img {
+  border-radius: 50%;
+  height: 47px;
+  width: 47px;
 }
 
-.image img {
-  border-radius: 50%;
-  border: 2px solid #91b0c1;
-  width: 70%;
-  background-color: #91b0c1;
+.heart {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  margin: 0;
+}
+
+.card2 {
+  background-color: #abddde;
+  border: 2px solid grey;
+  border-radius: 0.5em 0.5em 1em 1em;
+  margin: 0.5em;
+  padding: 0.5em;
+  height: max-content;
+}
+
+.card2 hr {
+  margin: 0;
+  padding: 0;
+}
+
+.card2 p {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.flip-card {
+  width: 100%;
+  background-clip: inherit;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  border-radius: 0.85em 0.85em 0 0;
 }
 
 span {
   font-weight: bold;
-  color: #2c6b68;
+  text-transform: uppercase;
 }
 
-
 h5 {
-  color: #d3435e;
-  text-transform: uppercase;
   font-family: "Quicksand", sans-serif;
+  margin-bottom: 0.1em;
+}
+
+h3 {
+  font-family: "Amatic SC", cursive;
+  text-transform: uppercase;
+  text-align: center;
   font-weight: bold;
-  margin-bottom: 0.5em;
+  padding-top: 0.3em;
+}
+
+h4 {
+  color: orange;
+  margin: 0.1em;
   text-align: center;
 }
 
-p {
-  margin: 0.3em;
+.flip-card-back hr {
+  border-color: darkorange;
 }
 
-.cardchar {
+hr {
+  margin: 0.1em;
+  padding: 0.2em;
+}
+
+p {
+  margin: 0.1em;
+}
+
+ul {
+  list-style-type: square;
+  padding: 0 1.5em;
+  font-size: 0.9em;
+}
+
+p,
+ul {
+  text-transform: uppercase;
+}
+
+li {
+  padding-bottom: 0.5em;
+}
+
+.alive {
+  color: #0b9fa2 !important;
+}
+
+.dead {
+  color: #95060e !important;
+}
+
+.flip-card-inner {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-chart:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  border-radius: 0.85em 0.85em 0 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  height: inherit;
+}
+
+.flip-card-back {
+  opacity: 0.85;
   padding: 1em;
+  background-color: rgb(68, 68, 68);
+  color: white;
+  transform: rotateY(180deg);
+  height: 300px;
 }
