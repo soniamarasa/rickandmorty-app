@@ -1,14 +1,14 @@
 footer {
-    /* background-color: #A8C0CE; */
     height: 3rem;
-    font-weight: bold;
+
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10fr;
+    color: white;
 }
 
 a {
     text-decoration: none;
-     color: #2C6B68;
+     color: #7bd3ce;
 }

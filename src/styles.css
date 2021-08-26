@@ -26,12 +26,18 @@ i {
   -moz-box-shadow: 0px 0px 0.3em rgb(3, 176, 189);
 }
 
-.pagination-previous {
-  border-radius: 2px 0 2px 0 !important;
+.ngx-pagination .pagination-previous {
+  border-radius:  0.5em 0 0 0.5em ;
 }
 
 .ngx-pagination .pagination-next {
-  border-radius: 0 2px 2px 0 !important;
+  border-radius: 0 0.5em 0.5em 0 ;
+}
+
+.ngx-pagination li a:hover {
+  color: #667887 !important;
+  font-weight: bold;
+  background-color: transparent;
 }
 
 .ngx-pagination li {

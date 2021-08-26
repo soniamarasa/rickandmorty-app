@@ -10,13 +10,18 @@
 
 .banner {
   background-image: url("../../../assets/background.jpg");
-  height: 90vh !important;
+  height: max-content;
+  background-size: cover;
   background-attachment: fixed;
   /* background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  
   overflow-x: hidden;
   background-clip: content-box; */
+}
+
+.logo img {
+  width: 35%;
 }
 
 .parent-height {
@@ -73,9 +78,16 @@
     margin-top: 0.5em;
     justify-content: center;
   }
-}
 
-@media (max-width: 767px) {
+  .items-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .position-link {
+    font-size: 15px;
+  }
+
 }
 
 .link img {
@@ -98,6 +110,7 @@
 .header-components {
   height: 100%;
   width: 100vw;
+  background-color: #00000018;
 }
 
 .banner {
