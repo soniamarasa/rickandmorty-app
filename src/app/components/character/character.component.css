@@ -102,13 +102,9 @@ li {
   color: #95060e !important;
 }
 
-.flip-card-inner {
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.card-chart:hover .flip-card-inner {
-  transform: rotateY(180deg);
+.card-chart:hover .flip-card-back {
+  transition: all 0.9s ease;
+  display: inherit;
 }
 
 .flip-card-front,
@@ -118,7 +114,6 @@ li {
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
 .flip-card-front {
@@ -126,10 +121,14 @@ li {
 }
 
 .flip-card-back {
+  display: none;
   opacity: 0.85;
   padding: 1em;
   background-color: rgb(68, 68, 68);
   color: white;
-  transform: rotateY(180deg);
   height: 300px;
+  box-shadow: inset 0 -50px 25px -25px rgb(3, 176, 189);
+  -webkit-box-shadow:inset 0 -50px 25px -25px rgb(3, 176, 189) ;
+  -moz-box-shadow: inset 0 -50px 25px -25px rgb(3, 176, 189);
 }
+
