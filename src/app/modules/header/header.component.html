@@ -1,12 +1,37 @@
 <header>
-  <div>
-    <div class="row">
-      <div class="col-12 banner">
+  <div class="row">
+    <div class="col-12 banner">
+      <div class="header-components">
+
+
+        <div class="row justify-content-center align-items-center">
+          <img src="../../../assets/logo.png" alt="logo" height="150">
+        </div>
+        <div class="row items-header" >
+          <div class="col-12 col-md-4 d-flex justify-content-center align-items-center link parent-height">
+            <a href="#statistics">
+              <img src="../../../assets/swirl.png" alt="swirl" >
+              <span class="position-link">Statistics</span>
+            </a>
+          </div>
+          <div class="col-12 col-md-4 d-flex justify-content-center align-items-center parent-height" id="img-chracters">
+            <img src="../../../assets/characters.png" alt="characters" width="" >
+          </div>
+          <div class="col-12 col-md-4 d-flex justify-content-center align-items-center link" >
+            <a href="#characters">
+              <img src="../../../assets/swirl.png" alt="swirl" >
+              <span class="position-link">Characters</span>
+            </a>
+          </div>
+        </div>
+
+
       </div>
+
     </div>
   </div>
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="row btns-row">
       <div class="col-12 col-sm-12 col-md-8 col-lg-8 btns-chart">
         <app-chart-button key="eps" chart="Episódios Por Temporada"></app-chart-button>
@@ -14,13 +39,10 @@
       </div>
 
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 btn-filter">
-
-        <app-filter-button>
-        </app-filter-button>
         <button class="btn btn-success btn-sm clean" (click)="cleanFilter()" *ngIf="apiService.isFiltering">Limpar
           Filtro</button>
       </div>
 
     </div>
-  </div>
+  </div> -->
 </header>

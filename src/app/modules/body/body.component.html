@@ -1,6 +1,30 @@
+<div class="container-fluid season-eps">
+    <div class="row">
+        <div class="col-12 p-0 ">
+            <div class="title">
+                <h2 id="statistics">Total Episodes Per Season</h2>
+              </div>
+          <app-bar-chart *ngIf="renderGraphs" [obj]="currentEpObj" chartLab="Quantidade de Episódios"> </app-bar-chart>
+        </div>
+      </div>
+</div>  
+<div class="container-fluid planet-char">
+    <div class="row">
+        <div class="col-12 p-0  ">
+            <div class="title">
+                <h2><a ></a>Total Characters Per Planet</h2>
+              </div>
+            <app-bar-chart *ngIf="renderGraphs" [obj]="currentLocalObj" chartLab="Quantidade de Personagens"> </app-bar-chart>
+        </div>
+    </div>
+</div>
 <div class="container-fluid container-list-all">
     <div class="row ">
-        <div class="col-12">
+        <div class="col-12" >
+            <div class="title">
+                <h1 id="characters">CHARACTERS</h1>
+                <h3> SEE SOME CHARACTER TO SEE THE DETAILS!</h3>
+              </div>
             <app-list-characters> </app-list-characters>
         </div>
     </div>
