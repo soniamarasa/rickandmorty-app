@@ -29,6 +29,7 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { ApiService } from './services/api.service';
 import { EpisodeComponent } from './components/episode/episode.component';
 import { LocationComponent } from './components/location/location.component';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { LocationComponent } from './components/location/location.component';
     BarChartComponent,
     EpisodeComponent,
     LocationComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,

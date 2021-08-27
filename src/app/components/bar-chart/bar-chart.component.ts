@@ -14,11 +14,21 @@ export class BarChartComponent implements OnInit {
   public barChartOptions = {
     responsive: true,
     scales: {
-      yAxes: [
+      xAxes: [
         {
           display: true,
           ticks: {
             suggestedMin: 0,
+            fontColor: 'white',
+          },
+        },
+      ],
+      yAxes: [
+        {
+          display: true,
+          ticks: {
+            fontColor: 'white',
+            
           },
         },
       ],
@@ -27,11 +37,11 @@ export class BarChartComponent implements OnInit {
       zoom: {
         pan: {
           enabled: true,
-          mode: 'x',
+          mode: 'y',
         },
         zoom: {
           enabled: true,
-          mode: 'x',
+          mode: 'y',
         },
       },
     },
@@ -40,7 +50,16 @@ export class BarChartComponent implements OnInit {
   public barChartType = 'bar';
   public barChartLegend = true;
 
-  public barData = [{ data: [], label: '' }];
+  public barData = [
+    {
+      data: [],
+      backgroundColor: '#1072B8',
+      borderColor: '#0E609C',
+      borderWidth: 1,
+      label: '',
+      fontColor: '#fff',
+    },
+  ];
 
   constructor() {}
 
