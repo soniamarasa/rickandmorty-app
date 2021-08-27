@@ -21,6 +21,7 @@ export class BarChartComponent implements OnInit {
     scales: {
       xAxes: [
         {
+          position: 'top',
           display: true,
           ticks: {
             suggestedMin: 0,
@@ -33,6 +34,9 @@ export class BarChartComponent implements OnInit {
           display: true,
           ticks: {
             fontColor: 'white',
+            // min: 0,
+            // max: 100,
+            // stepSize: 20
           },
         },
       ],
