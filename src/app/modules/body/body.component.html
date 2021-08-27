@@ -4,7 +4,7 @@
             <div class="title">
                 <h2 id="statistics">Total Episodes Per Season</h2>
             </div>
-            <app-pie-chart *ngIf="renderGraphs" [obj]="currentEpObj" chartLab="Quantidade de Episódios">
+            <app-pie-chart *ngIf="renderGraphs" [obj]="currentEpObj">
             </app-pie-chart>
         </div>
     </div>
@@ -15,7 +15,7 @@
             <div class="title">
                 <h2><a></a>Total Characters Per Planet</h2>
             </div>
-            <app-bar-chart *ngIf="renderGraphs" [obj]="currentLocalObj" chartLab="Quantidade de Personagens">
+            <app-bar-chart *ngIf="renderGraphs" [obj]="currentLocalObj" chartLab="Population">
             </app-bar-chart>
         </div>
     </div>

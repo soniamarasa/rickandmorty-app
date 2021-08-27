@@ -13,6 +13,11 @@ export class BarChartComponent implements OnInit {
 
   public barChartOptions = {
     responsive: true,
+    legend: {
+      labels: {
+        fontColor: 'white',
+      },
+    },
     scales: {
       xAxes: [
         {
@@ -28,18 +33,17 @@ export class BarChartComponent implements OnInit {
           display: true,
           ticks: {
             fontColor: 'white',
-            
           },
         },
       ],
     },
     plugins: {
       zoom: {
-        pan: {
-          enabled: true,
-          mode: 'y',
-        },
         zoom: {
+          animation: {
+            duration: 1000,
+            easing: 'easeOutCubic'
+          },
           enabled: true,
           mode: 'y',
         },
@@ -57,7 +61,6 @@ export class BarChartComponent implements OnInit {
       borderColor: '#0E609C',
       borderWidth: 1,
       label: '',
-      fontColor: '#fff',
     },
   ];
 

@@ -1,12 +1,14 @@
-<div style="display: block">
-    <canvas
-      baseChart
-      [datasets]="pieData"
-      [labels]="keys"
-      [options]="pieChartOptions"
-      [legend]="true"
-      chartType="pie" 
-    >
-    </canvas>
-  </div>
-  
+<div>
+  <canvas
+    class="chart-container"
+    style="position: relative; height: 40vh; width: 80vw"
+    width="400px"
+    baseChart
+    [datasets]="pieData"
+    [labels]="keys"
+    [options]="pieChartOptions"
+    [legend]="true"
+    chartType="pie"
+  >
+  </canvas>
+</div>
